@@ -10,4 +10,43 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+// body{
+//   width: 100%;
+//     div{
+//     background-color: red;
+//     width: 40%;
+//     border: 1px solid black;
+    
+//   }
+//   #right{
+//     position: absolute;
+//     top:0px; right: 0px;
+    
 
+//   }
+//   div p.divClass #aID {  
+//     color: blue;
+//   }
+// }
+body{
+  .container{
+    width: 700px;
+    height: 300px;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    div{
+      background-color: red;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+    }
+  }
+}
+
+// div{
+//   background-color: red;
+// }
