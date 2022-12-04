@@ -4,11 +4,44 @@ document.addEventListener("DOMContentLoaded",()=>{
     main();
 })
 
-function main(){
-    const table = document.querySelector('table');
-    if (!table){return}
+async function main(){
+    try{
+        const url ='https://currency-ror1.vercel.app/api/currency';
+        const response = await fetch(url);
+        const data:Curr[] = await response.json();
+        
 
-    buildTableHead(table);
+
+        const table = document.querySelector('table');
+        if (!table){return}
+
+        buildTableHead(table); 
+        
+        data.forEach((curr) => {
+            createTableRow(curr, table);          
+        });
+        
+    }catch(error){
+        console.log(error);
+    }
+    
+}
+
+interface Curr{
+    rdate: number,
+    curr: number
+}
+
+function createTableRow(_curr:Curr,_table:HTMLElement){
+    const row = document.createElement('tr');
+    const dateCell = document.createElement('td');
+    const CurrencyCell = document.createElement('td');
+    const ExchangeCell = document.createElement('td');
+    _table.appendChild(row);
+
+    dateCell.innerText = String(_curr.rdate);
+    CurrencyCell.innerText = String(_curr.curr);
+    row.append(dateCell,CurrencyCell,ExchangeCell);
 }
 
 function buildTableHead(_table:HTMLElement){
