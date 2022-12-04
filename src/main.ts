@@ -5,5 +5,20 @@ document.addEventListener("DOMContentLoaded",()=>{
 })
 
 function main(){
-    // alert('hi')
+    const table = document.querySelector('table');
+    if (!table){return}
+
+    buildTableHead(table);
+}
+
+function buildTableHead(_table:HTMLElement){
+    const thead = document.createElement('thead');
+    _table.appendChild(thead);
+    const thDateCell = document.createElement('th');
+    const thCurrencyCell = document.createElement('th');
+    const thExchangeRateCell = document.createElement('th');
+    thDateCell.innerText = 'date';
+    thCurrencyCell.innerText ='currency';
+    thExchangeRateCell.innerText ='exchange rate';
+    thead.append(thDateCell,thCurrencyCell,thExchangeRateCell)
 }
