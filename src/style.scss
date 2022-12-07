@@ -11,3 +11,36 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body{
+  width: 100%;
+  align-items: center;
+  h1{
+    text-align: center;
+  }
+  form{
+    border: 2px solid rgb(56, 133, 220);
+    margin: 2px;
+    border-radius:4px;
+    width: 50%;
+    div{
+      padding: 20px;
+      border-collapse: collapse;
+      .exchange{
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+    }
+  }
+  table{
+    border: 2px solid rgb(56, 133, 220);
+    margin: 2px;
+    border-radius:4px;
+    width: 50%;
+    thead{
+      background-color: rgb(47, 47, 132);
+      color: white;
+      
+      
+    }
+  }
+}
